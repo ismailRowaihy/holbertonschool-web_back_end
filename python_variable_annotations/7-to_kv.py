@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """
-the module is a function that takes a list of float and returns a float
+the module is a function that takes a str and an int or float and returns a tuple with str and float
 """
 import typing
 
 
-def to_kv(k: str , v : typing.Union[int,float]) -> typing.Tuple[str, float]:
+def to_kv(k: str, v: typing.Union[int, float]) -> typing.Tuple[str, float]:
     """
-    this fucntion takes a list of float retruns its sum as a float
+    this fucntion takes a str and an int or float and returns a tuple with str and float
     """
-    return (k,float(v**2))
+    return (k, float(v ** 2))
