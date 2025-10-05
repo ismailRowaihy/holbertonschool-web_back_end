@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-the module is a function that takes a str and an 
+the module is a function that takes a str and an
 int or float and returns a tuple with str and float
 """
 import typing
