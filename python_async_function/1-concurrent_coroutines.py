@@ -3,12 +3,12 @@
 
 
 import asyncio
-import random
+import typing
 
 wait_random = __import__("0-basic_async_syntax").wait_random
 
 
-async def wait_n(n: int, max_delay: int) -> list[float]:
+async def wait_n(n: int, max_delay: int) -> typing.List[float]:
     """a function that sleeps with random value"""
 
     tasks = [wait_random(max_delay) for i in range(n)]
