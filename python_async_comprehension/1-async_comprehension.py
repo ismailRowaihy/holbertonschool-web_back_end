@@ -1,0 +1,18 @@
+#!/usr/bin/env python3
+"""this module with afunction that uses asyncloops over async generator"""
+
+
+import asyncio
+import typing
+import random
+
+async_generator = __import__("0-async_generator").async_generator
+
+
+async def async_comprehension() -> List[float]:
+    """a function that uses asyncloops over async generator"""
+
+    result = []
+    async for i in async_generator():
+        result.append(i)
+    return result
