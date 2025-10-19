@@ -1,10 +1,6 @@
 #!/usr/bin/env python3
 """this module with afunction that returns an page index range"""
 
-import typing
-import csv
-import math
-
 import csv
 import math
 from typing import List, Tuple
@@ -43,6 +39,6 @@ class Server:
         return self.__dataset[start_range:end_range]
 
 
-def index_range(page: int, page_size: int) -> typing.Tuple:
+def index_range(page: int, page_size: int) -> Tuple:
     """a function that returns page index range"""
     return ((page - 1) * page_size, page * page_size)
