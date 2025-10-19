@@ -4,7 +4,7 @@
 
 import csv
 import math
-from typing import List, Tuple, Dict
+from typing import List, Tuple, Dict, Union
 
 
 class Server:
@@ -38,20 +38,23 @@ class Server:
         if end_range > len(self.__dataset):
             return []
         return self.__dataset[start_range:end_range]
-    def get_hyper(self, page: int, page_size: int) -> dict[str, int]:
-        list_data = self.get_page(page,page_size)
-        
-        total_pages = math.ceil(len(self.__dataset)/page_size)
-        next_page = page + 1 if page + 1 <= total_pages else None
-        prev_page = page -1 if page > 1 else None
 
-        dict_data = {"page_size": len(list_data),
-                    "page":page,
-                    "data":list_data,
-                    "next_page":next_page,
-                    "prev_page":prev_page,
-                    "total_pages":total_pages
-                    }
+    def get_hyper(self, page: int, page_size: int) -> Dict:
+        """a method that returns data as a dict"""
+        list_data = self.get_page(page, page_size)
+
+        total_pages = math.ceil(len(self.__dataset) / page_size)
+        next_page = page + 1 if page + 1 <= total_pages else None
+        prev_page = page - 1 if page > 1 else None
+
+        dict_data = {
+            "page_size": len(list_data),
+            "page": page,
+            "data": list_data,
+            "next_page": next_page,
+            "prev_page": prev_page,
+            "total_pages": total_pages,
+        }
         return dict_data
 
 
