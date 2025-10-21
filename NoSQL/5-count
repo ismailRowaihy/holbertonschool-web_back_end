@@ -1,2 +1,2 @@
 //command to count doc in collection
-db.school.countDocuments()
+db.school.count()
