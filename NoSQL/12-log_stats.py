@@ -37,3 +37,7 @@ def main():
     \n\tmethod PATCH: {m_patch}\n\tmethod DELETE: {m_delete}"
     )
     print(f"{s_check} status check")
+
+
+if __name__ == "__main__":
+    main()
