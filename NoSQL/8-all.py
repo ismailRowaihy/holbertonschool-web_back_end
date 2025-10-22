@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 """this module is a fucntin that returns a list of docs """
 import pymongo
 
