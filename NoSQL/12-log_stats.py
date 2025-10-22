@@ -2,6 +2,7 @@
 """ this module provides some stats about nginx logs """
 from pymongo import MongoClient
 
+
 def main():
     """provides some stats about nginx logs"""
     client = MongoClient("mongodb://127.0.0.1:27017")
@@ -9,9 +10,9 @@ def main():
 
     list_data = list(collection.find())
 
-    m_get,m_post,m_put = 0,0,0   
-    m_patch,m_delete,s_check = 0,0,0
- 
+    m_get, m_post, m_put = 0, 0, 0
+    m_patch, m_delete, s_check = 0, 0, 0
+
     for i in list_data:
         if i.get("method") is None:
             continue
