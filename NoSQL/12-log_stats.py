@@ -32,9 +32,9 @@ def main():
     logs = len(list_data)
     print(f"{logs} logs")
     print(
-        f"Methods:\n\tmethod GET: {m_get}\
-    \n\tmethod POST: {m_post}\n\tmethod PUT: {m_put}\
-    \n\tmethod PATCH: {m_patch}\n\tmethod DELETE: {m_delete}"
+    f"Methods:\n\tmethod GET: {m_get}"+
+    f"\n\tmethod POST: {m_post}\n\tmethod PUT: {m_put}"+
+    f"\n\tmethod PATCH: {m_patch}\n\tmethod DELETE: {m_delete}"
     )
     print(f"{s_check} status check")
 
