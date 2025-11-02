@@ -1,4 +1,11 @@
 export default function hasValuesFromArray (aset,arr){
-    const arrs = new Set(arr)
-    return arrs.isSubsetOf(aset)
+    
+    for (const elm of arr) {
+            if (aset.has(elm)) {
+                continue;
+            }else{
+                return false
+            }
+        }
+    return true
 }
