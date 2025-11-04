@@ -1,5 +1,5 @@
 export default function cleanSet (set,startString){
-    if (startString.length < 1){
+    if (startString && startString.length < 1){
         return ''
     }
     return Array.from(set)
