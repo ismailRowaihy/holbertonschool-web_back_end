@@ -7,7 +7,7 @@ export default function handleProfileSignup(firstName,lastName,fileName){
         return data.map(res =>{
             return{
                 'status':res.status,
-                'value':res.status === 'fulfilled'? res.value:`${fileName} cannot be processed`
+                'value':res.status === 'fulfilled'? res.value:`Error: ${fileName} cannot be processed`
             }
         })
 
