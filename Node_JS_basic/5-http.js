@@ -14,14 +14,11 @@ const app = http.createServer(async (req, res) => {
     try {
       const studentData = await countStudents(process.argv[2]);
       res.write(studentData);
-  } catch (error) {
-      console.error(`Error fetching students: ${error.message}`);
-      res.writeHead(500, { 'Content-Type': 'text/plain' });
-      res.end('Could not fetch student data');
-      return;
-  }
+    } catch (error) {
+      res.end('Cannot load the database');
+    }
     res.end();
-  }else {
+  } else {
     res.writeHead(404, { 'Content-Type': 'text/plain' });
     res.end('404 Not Found');
   }
