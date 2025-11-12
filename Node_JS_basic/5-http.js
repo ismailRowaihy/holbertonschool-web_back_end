@@ -13,7 +13,8 @@ const app = http.createServer(async(req, res) => {
     res.writeHead(200, { 'Content-Type': 'text/html' });
     res.end('Hello Holberton School!');
   }else if (req.url === '/students' && req.method === 'GET') {
-    res.writeHead(200, { 'Content-Type': 'text/plain' });
+    res.writeHead(200, { 'Content-Type': 'text/plain'});
+    res.write('This is the list of our students\n')
     res.write( await countStudents(process.argv[2]))
     res.end()
   }
