@@ -1,6 +1,7 @@
 const fs = require('node:fs');
 
 async function countStudents(path) {
+  let resault =[]
   try {
     const data = await fs.readFileSync(path, 'utf-8');
     const lines = data.trim().split('\n');
@@ -17,11 +18,12 @@ async function countStudents(path) {
       }
     }
     // console.log(fieldMap)
-    console.log(`Number of students: ${lines.length}`);
+    resault.push(`Number of students: ${lines.length}`)
 
     fieldMap.forEach((value, key) => {
-      console.log(`Number of students in ${key}: ${value.length}. List: ${value.join(', ')}`);
+      resault.push(`Number of students in ${key}: ${value.length}. List: ${value.join(', ')}`)
     });
+    return resault.join('\n')
   } catch (err) {
     throw new Error('Cannot load the database');
   }
