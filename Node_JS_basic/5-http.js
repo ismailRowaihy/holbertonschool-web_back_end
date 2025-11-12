@@ -11,7 +11,15 @@ const app = http.createServer(async (req, res) => {
   } else if (req.url === '/students' && req.method === 'GET') {
     res.writeHead(200, { 'Content-Type': 'text/plain' });
     res.write('This is the list of our students\n');
-    res.write(await countStudents(process.argv[2]));
+    try {
+      const studentData = await countStudents(process.argv[2]);
+      res.write(studentData);
+  } catch (error) {
+      console.error(`Error fetching students: ${error.message}`);
+      res.writeHead(500, { 'Content-Type': 'text/plain' });
+      res.end('Could not fetch student data');
+      return;
+  }
     res.end();
   }else {
     res.writeHead(404, { 'Content-Type': 'text/plain' });
