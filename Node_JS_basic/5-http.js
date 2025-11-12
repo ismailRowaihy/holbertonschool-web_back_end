@@ -13,6 +13,9 @@ const app = http.createServer(async (req, res) => {
     res.write('This is the list of our students\n');
     res.write(await countStudents(process.argv[2]));
     res.end();
+  }else {
+    res.writeHead(404, { 'Content-Type': 'text/plain' });
+    res.end('404 Not Found');
   }
 });
 
